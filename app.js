@@ -1,0 +1,6 @@
+const $=id=>document.getElementById(id);const gb=n=>n==null?'Non disponible':(n/1073741824).toFixed(2)+' Go';
+async function load(){ $('msg').textContent='Lecture…'; $('cpu').textContent=navigator.hardwareConcurrency??'Non disponible'; $('ram').textContent=navigator.deviceMemory?`~${navigator.deviceMemory} Go`:'Non disponible';
+try{const s=await navigator.storage.estimate();$('used').textContent=gb(s.usage);$('quota').textContent=gb(s.quota)}catch{$('used').textContent=$('quota').textContent='Non disponible'}
+$('net').textContent=navigator.onLine?'🟢 En ligne':'🔴 Hors ligne';$('screen').textContent=`${screen.width} × ${screen.height}`;$('platform').textContent=navigator.userAgentData?.platform||navigator.platform||'Non disponible';
+try{if(navigator.getBattery){const b=await navigator.getBattery();$('battery').textContent=`${Math.round(b.level*100)} %${b.charging?' ⚡':''}`}else $('battery').textContent='Non disponible'}catch{$('battery').textContent='Non disponible'} $('msg').textContent='Dernière lecture : '+new Date().toLocaleTimeString('fr-FR')}
+$('refresh').addEventListener('click',load);addEventListener('online',load);addEventListener('offline',load);if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));load();
