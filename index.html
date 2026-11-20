@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b1220"><link rel="manifest" href="./manifest.json"><link rel="icon" href="./icon.svg"><title>Phone Monitor PWA</title><style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#07101f;color:#eef6ff}body{margin:0}.wrap{max-width:900px;margin:auto;padding:22px}.head{display:flex;justify-content:space-between;gap:12px;align-items:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:18px}.card{background:#111c2f;border:1px solid #22324b;border-radius:16px;padding:18px}.v{font-size:1.55rem;font-weight:750;color:#65d9ff}.k{color:#9fb0c7;margin-bottom:8px}button{background:#39c6f4;color:#04111c;border:0;border-radius:12px;padding:11px 15px;font-weight:700}small{color:#91a3b9}#msg{margin-top:14px;color:#86efac}@media(max-width:450px){.wrap{padding:14px}.head{align-items:flex-start;flex-direction:column}}</style></head>
+<body><main class="wrap"><div class="head"><div><h1>Phone Monitor</h1><small>PWA • informations accessibles au navigateur</small></div><button id="refresh">Actualiser</button></div><div id="msg" role="status"></div><section class="grid">
+<div class="card"><div class="k">CPU logiques</div><div class="v" id="cpu">—</div></div>
+<div class="card"><div class="k">RAM estimée</div><div class="v" id="ram">—</div></div>
+<div class="card"><div class="k">Stockage PWA utilisé</div><div class="v" id="used">—</div></div>
+<div class="card"><div class="k">Quota stockage PWA</div><div class="v" id="quota">—</div></div>
+<div class="card"><div class="k">Réseau</div><div class="v" id="net">—</div></div>
+<div class="card"><div class="k">Écran</div><div class="v" id="screen">—</div></div>
+<div class="card"><div class="k">Batterie</div><div class="v" id="battery">—</div></div>
+<div class="card"><div class="k">Plateforme</div><div class="v" id="platform">—</div></div>
+</section><p><small>NB : une PWA ne peut pas lire le % CPU Android, la RAM réellement utilisée ou le filesystem complet comme top/free/df.</small></p></main><script src="./app.js"></script></body></html>
