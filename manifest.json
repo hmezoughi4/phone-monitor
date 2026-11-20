@@ -1,0 +1,1 @@
+{"name":"Phone Monitor PWA","short_name":"Phone Monitor","start_url":"./","scope":"./","display":"standalone","background_color":"#07101f","theme_color":"#0b1220","lang":"fr","icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
